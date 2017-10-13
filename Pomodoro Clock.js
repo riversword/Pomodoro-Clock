@@ -72,7 +72,6 @@ $(document).ready(function(){
 	//session倒计时
 	function sessionCount(){
 		//var sminTime=sMin,ssecTime=0;
-
 		$('.timeDisplay h2').html("session");
 		$('.timeDisplay span').html(dbNum(sminTime)+":"+dbNum(ssecTime));
 		var sessionIn=setInterval(function(){
@@ -88,10 +87,13 @@ $(document).ready(function(){
 				//执行break的倒计时
 				breakCount();
 			}
-			//console.log(sessionIn);
+			console.log('定时器里面sessionIn='+sessionIn);
 			$('.timeDisplay span').html(dbNum(sminTime)+":"+dbNum(ssecTime));
 		},1000);
+		//console.log('定时器外面sessionIn='+sessionIn);
 		j++;
+		console.log('session结束后sessionIn='+sessionIn);
+    	console.log("session结束后j="+j);
 	}
 	//break倒计时
 	function breakCount(){
@@ -109,9 +111,12 @@ $(document).ready(function(){
 					bminTime=bMin,bsecTime=0;
 					sessionCount();//执行session倒计时
 				}
+				console.log('定时器里面breakIn='+breakIn);
 				$('.timeDisplay span').html(dbNum(bminTime)+":"+dbNum(bsecTime));
 			},1000);
 		j++;
+		console.log('break结束后breakIn='+breakIn);
+    	console.log("break结束后j="+j);
 	}
 	//转换为2位数
 	function dbNum(a){
