@@ -1,5 +1,5 @@
 $(document).ready(function(){
-		var j=0,sMinCache,sSecCache,bMinCache,bSecCache;//j用来标记定时器的个数
+		var j=1,sMinCache,sSecCache,bMinCache,bSecCache;//j用来标记定时器的个数
 		var sMin=Number($('.sessionTime span').html()),bMin=Number($('.breakTime span').html());//字符串要转化为数字
 		//注意，在计时开始后，再点击start是否会产生计时紊乱。
 		var sminTime=sMin,ssecTime=0,bminTime=bMin,bsecTime=0;
