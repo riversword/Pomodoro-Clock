@@ -1,131 +1,143 @@
 *{
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
-body{
-	background-color:rgba(0,0,0,0.8);
+
+body{ 
+	background: -webkit-linear-gradient(90deg, rgb(200,20,200), rgb(80,0,80)); /* Safari 5.1 - 6.0 */
+  	background: -o-linear-gradient(90deg, rgb(200,20,200), rgb(80,0,80)); /* Opera 11.1 - 12.0 */
+  	background: -moz-linear-gradient(90deg, rgb(200,20,200), rgb(80,0,80)); /* Firefox 3.6 - 15 */
+  	background: linear-gradient(90deg, rgb(200,20,200), rgb(80,0,80)); /* standard */
 }
+
 .Operator{
-	width:400px;
-	margin:20px auto 30px;
+	width: 400px;
+	margin: 20px auto 30px;
 }
+
 .Operator p{
-	font-size:1em;
-	text-shadow:-2px -2px 1px rgb(255,255,255);
+	font-size: 1em;
+	color: rgb(200,200,200);
 }
+
 .Operator span{
-	font-size:1.6em;
+	font-size: 1.6em;
 	font-weight: bold;
-	text-shadow:0 15px 5px rgb(0,0,0);
-	color:rgb(255,255,255);
+	text-shadow: 0 15px 5px rgb(0,0,0);
+	color: rgb(255,255,255);
 }
+
 .sessionTime{
 	display: inline-block;
 	width: 48%;
+	margin-left: .8%;
 	text-align: center;
-	margin-left:0.8%;
 }
+
 .breakTime{
 	display: inline-block;
-	width:48%;
+	width: 48%;
 	text-align: center;
 }
+
 .Operator button{
+	width:30%;
 	font-size: 1.6em;
 	font-weight: bold;
-	width:30%;
 	text-align: center;
-	border:4px rgb(255,255,255) solid;
-	color:rgb(255,255,255);
+	border: 4px rgba(255,255,255,0.8) solid;
+	color: rgba(255,255,255,0.8);
 	background-color: transparent;
-	/*box-shadow: 10px 10px 20px rgb(0,0,0);*/
 	box-shadow: none;
 	outline: none;
 }
-.Operator button:hover{
-	/*box-shadow: none;*/
+
+.Operator button:hover{ 
+	border: 4px rgba(255,255,255,1) solid;
+	color: rgba(255,255,255,1); 
 	box-shadow: 0 15px 20px rgb(0,0,0);
+	cursor: pointer;
 }
 
-
 .displayBg{
-	width:380px;
-	height:380px;
-	margin:0 auto;
-	border:4px rgb(50,50,50) solid;
+	width: 380px;
+	height: 380px;
+	margin: 0 auto;
+	border: 4px rgb(255,255,255) solid;
 	border-radius: 50%;
 	box-shadow: 0 0 35px rgb(255,255,255);
 }
 
 .timeDisplay{
-	color:rgb(255,255,255);
-	font-size: 50px;
-	width:374px;
-	height:374px;
+	width: 374px;
+	height: 374px;
 	margin: auto;
-	border: 3px rgb(255,255,255) solid;
+	font-size: 50px;
+	text-align: center;
+	border: 3px rgba(200,200,200,0.9) solid;
 	border-radius: 50%;
-	text-align: center;
-}
-.timeDisplay h2{
-	font-size: 20px;
-	margin-top: 35%;
-}
-.timeDisplay span{
-	font-family: Times;
-}
-.controls{
-	width:300px;
-	margin:10px auto;
-	text-align: center;
-}
-.controls button{
-	width:60px;
-	height:60px;
-	font-size: 1.3em;
-	font-weight: bold;
-	color:rgb(255,255,255);
-	text-shadow:0 0 2px rgb(0,0,0);
-	border:4px rgb(255,255,255) solid ;
-	outline: none;
-	border-radius:50%;
-	box-shadow:0 15px 10px rgba(0,0,0,1);
-	background: transparent;
-}
-.controls button:hover{
-	background-color: rgba(255,255,255,0.8); 
-}
-.controls button:nth-child(2){
-	display: none;
-}
-.footer{
-	text-align: center;
-	margin-top: 10%;
+	color: rgb(255,255,255);
 }
 
-/*!适配移动端*/
+.timeDisplay h2{
+	margin-top: 35%;
+	font-size: 20px;
+}
+
+.timeDisplay span{ font-family: Times; }
+
+.controls{
+	width: 300px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.controls button{
+	width: 60px;
+	height: 60px;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-shadow: 0 0 2px rgb(0,0,0);
+	border: 4px rgb(255,255,255) solid ;
+	outline: none;
+	border-radius: 50%;
+	box-shadow: 0 15px 10px rgba(0,0,0,1);
+	color: rgb(255,255,255);
+	background: transparent;
+	cursor: pointer;
+}
+
+.controls button:hover{ background-color: rgba(255,255,255,0.8); }
+
+.controls button:nth-child(2){ display: none; }
+
+.footer{
+	margin-top: 10%;
+	text-align: center;
+}
+
+
 @media screen and (max-width: 420px) {
 
 .Operator{
-	width:100%;
-	margin:5% auto 15%;
+	width: 100%;
+	margin: 5% auto 15%;
 }
-.Operator button{
-	box-shadow: 0 15px 20px rgb(0,0,0);
-}
+
+.Operator button{ box-shadow: 0 15px 20px rgb(0,0,0); }
+
 .displayBg{
-	width:300px;
-	height:300px;
+	width: 300px;
+	height: 300px;
 }
+
 .timeDisplay{
-	width:294px;
-	height:294px;
+	width: 294px;
+	height: 294px;
 }
-.controls{
-	margin:15% auto 0;
-}
-.footer{
-	margin-top: 20%;
-}
+
+.controls{ margin: 15% auto 0; }
+
+.footer{ margin-top: 20%; }
 
 }
