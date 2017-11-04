@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var sMinCache,sSecCache,bMinCache,bSecCache,
 		sMin=Number($('.sessionTime span').html()),
-		bMin=Number($('.breakTime span').html()),// transform the string into num
+		bMin=Number($('.breakTime span').html()),// 字符串需要转化为数字
 		timerId=null;
 	var sminTime=sMin,
 		ssecTime=0,
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		sminTime=sMin,ssecTime=0,bminTime=bMin,bsecTime=0;
 		$('.timeDisplay h2').html("session");
 		$('.timeDisplay span').html(dbNum(sMin)+":"+'00');
-		$('.timeDisplay').css('background','none'); //reset the background color
+		$('.timeDisplay').css('background','none'); //背景颜色初始化
 	});
 	
 	$('.sessionTime button:eq(0)').click(function(){
@@ -36,7 +36,7 @@ $(document).ready(function(){
 			$('.controls button:eq(0)').css('display','inline-block');
 			sminTime=sMin,ssecTime=0;
 
-			//when current time is session
+			//当前时间为session时
 			if($('.timeDisplay h2').html()=='session'){
 				$('.timeDisplay span').html(dbNum(sMin)+":00");
 				$('.timeDisplay').css('background','none'); 
@@ -94,9 +94,9 @@ $(document).ready(function(){
 			}else if(ssecTime!=0){
 				ssecTime--;
 				sessionAnimate();
-			}else if(ssecTime==0 && sminTime==0){//when the current time is 00:00, stop
+			}else if(ssecTime==0 && sminTime==0){//当前计时为 00:00时, 停止
 				clearInterval(timerId);
-				sminTime=sMin,ssecTime=0; //time reset
+				sminTime=sMin,ssecTime=0; //计时重置
 				a1play();
 				setTimeout(function(){a1stop();},500);
 				breakCount();
@@ -132,19 +132,19 @@ $(document).ready(function(){
 			},1000);
 		
 	}
-	//transform number into double-digit
+	//将数字转化为两位数
 	function dbNum(a){
 		if(a<10){
 			return "0"+a;
 		}else return a;
 	}
 
-	//play audio
+	//播放音频
 	function a1play(){
 		audio1.play();
 	}
 
-	//stop audio
+	//停止播放音频
 	function a1stop(){
 		audio1.currentTime=0;
 		audio1.pause();
